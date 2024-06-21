@@ -1,34 +1,90 @@
-"use client";
-import Card from "@/components/Card";
+// import { CarouselDemo } from "@/components/CarouselDemo";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-
+import HeroSection from "@/components/HeroSection";
+import Info from "@/components/Info";
+import Card from "@/components/Card";
 import Slider from "@/components/Slider";
-import React, { useState } from "react";
 
 export default function Home() {
-  const [addtoCart, setAddtoCart] = useState(0);
-  const products = [
-    { id: "1", src: "/product1.jpeg", price: "RS 300" },
-    { id: "2", src: "/product2.jpeg", price: "RS 400" },
-    { id: "3", src: "/product2.jpeg", price: "RS 400" },
-    { id: "4", src: "/product2.jpeg", price: "RS 400" },
-    { id: "5", src: "/product2.jpeg", price: "RS 400" },
+  const Products = [
+    {
+      id: 1,
+      title: "Apple Watch Series 7 GPS, Aluminium Case, Pink",
+      price: 599,
+      rating: 5,
+      image: "/product2.webp",
+    },
+    {
+      id: 2,
+      title: "Apple Watch Series 7 GPS, Aluminium Case, Blue",
+      price: 699,
+      rating: 4,
+      image: "/product2.webp",
+    },
+    {
+      id: 3,
+      title: "Apple Watch Series 7 GPS, Aluminium Case, Green",
+      price: 799,
+      rating: 3,
+      image: "/product3.webp",
+    },
+    {
+      id: 4,
+      title: "Apple Watch Series 7 GPS, Aluminium Case, Red",
+      price: 899,
+      rating: 2,
+      image: "/product4.webp",
+    },
+    {
+      id: 5,
+      title: "Apple Watch Series 7 GPS, Aluminium Case, Pink",
+      price: 599,
+      rating: 5,
+      image: "/product2.webp",
+    },
+    {
+      id: 6,
+      title: "Apple Watch Series 7 GPS, Aluminium Case, Pink",
+      price: 599,
+      rating: 5,
+      image: "/product2.webp",
+    },
+    {
+      id: 7,
+      title: "Apple Watch Series 7 GPS, Aluminium Case, Pink",
+      price: 599,
+      rating: 5,
+      image: "/product2.webp",
+    },
+    {
+      id: 8,
+      title: "Apple Watch Series 7 GPS, Aluminium Case, Pink",
+      price: 599,
+      rating: 5,
+      image: "/product2.webp",
+    },
   ];
   return (
     <>
-      <Header noofpRoducts={addtoCart} />
+      <Header />
+      <HeroSection />
+      {/* <CarouselDemo /> */}
       <Slider />
-      <div className="flex flex-wrap justify-center items-center  w-full p-8 m-0">
-        {products.map((product) => (
+      <div className="flex py-4 px-8 flex-wrap bg-slate-100">
+        {" "}
+        {Products.map((product) => (
           <Card
             key={product.id}
-            src={product.src}
+            title={product.title}
+            rating={product.rating}
             price={product.price}
-            setAddtoCart={setAddtoCart}
-            addtoCart={addtoCart}
+            image={product.image}
           />
         ))}
       </div>
+      <Info />
+      <Footer />
     </>
   );
 }
