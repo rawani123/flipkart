@@ -6,7 +6,7 @@ import React from "react";
 const Card = ({ title, price, rating, image }) => {
   return (
     <div className="bg-white ">
-      <div className="w-[288px] mx-4 my-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:shadow-lg transition duration-300">
+      <div className="w-[331px] mx-4 my-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:shadow-lg transition duration-300">
         <a href="#">
           <div className="flex justify-center p-8">
             <Image
