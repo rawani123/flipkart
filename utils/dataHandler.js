@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const dataFilePath = path.join(process.cwd(), 'data.json');
+const dataFilePath = path.join(process.cwd(),"public",'/data.json');
 
 export const readData = () => {
   try {
