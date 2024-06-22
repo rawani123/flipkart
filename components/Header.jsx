@@ -16,23 +16,24 @@ import { TfiHeadphoneAlt } from "react-icons/tfi";
 import { FaArrowTrendUp } from "react-icons/fa6";
 import { MdOutlineFileDownload } from "react-icons/md";
 import Image from "next/image";
+import Link from "next/link";
 
-const Header = ({}) => {
+const Header = ({count}) => {
   return (
     <>
       <div className="bg-white flex justify-between text-[14px] items-center h-12 w-full px-6 py-4 m-0">
-        <Image
+        <Link href={"/"}><Image
           className="ml-6"
           height={120}
           width={120}
           src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/fkheaderlogo_exploreplus-44005d.svg"
           alt="Flipkart"
-        />
+        /></Link>
         <div className="flex items-center h-8 bg-blue-50 rounded-md px-2">
           <CiSearch className="h-6 w-6" />
           <input
             type="text"
-            placeholder="Search for Products, Brands and More"
+          placeholder="Search for Products, Brands and More"
             className="rounded-md p-1 outline-none bg-blue-50 w-[550px]"
           />
         </div>
@@ -153,10 +154,10 @@ const Header = ({}) => {
             </ul>
           </div>
         </div>
-        <div className="flex">
+        <Link className="flex" href={"/cart"} >
           <GrCart className="h-5 w-5" /> Cart{" "}
-          <span className="font-bold mx-2">{3}</span>
-        </div>
+          <span className="font-bold mx-2">{count}</span>
+        </Link>
         <div className="flex">
           <AiOutlineShop className="h-5 w-5" /> Become a Seller
         </div>

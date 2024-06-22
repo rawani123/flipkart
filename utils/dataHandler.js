@@ -36,3 +36,14 @@ export const addOrUpdateProduct = (product) => {
 
   return !existingProduct; // Return true if added, false if count was incremented
 };
+
+export const deleteProductById = (idToDelete) => {
+  let data = readData();
+
+  // Filter out the product with the specified id
+  data = data.filter((product) => product.id !== idToDelete);
+
+  writeData(data);
+
+  return !(data.length !== data.length); // Return true if a product was deleted, false otherwise
+};
