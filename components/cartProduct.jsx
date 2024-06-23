@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 
@@ -29,9 +30,9 @@ const CartProduct = ({
           <h4 className="text-[12px]">{rating}</h4>
           <h3 className="text-[14px]">{price}</h3>
         </div>
-        <div className="bg-orange-400 shadow-md flex items-center justify-center text-white text-[13px] shadow-gray-400 w-40 h-8 mt-14">
+        <Link href={`/buynow/${id}`} className="bg-orange-400 shadow-md flex items-center justify-center text-white text-[13px] shadow-gray-400 w-40 h-8 mt-14">
           Buy Now
-        </div>
+        </Link>
       </div>
       <div className="bg-white flex gap-x-2 h-[30px] w-[650px]">
         <button className="border-2 border-slate-200 px-3 py-0.5 rounded-full ">
