@@ -24,7 +24,7 @@ export default function Home() {
       });
 
       console.log(response.data.message);
-      alert(response.data.message) // Display the result message
+      alert(response.data.message)
     } catch (error) {
       console.error('Error adding product:', error);
     }
