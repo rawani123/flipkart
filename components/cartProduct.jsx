@@ -17,6 +17,8 @@ const CartProduct = ({
     <div className=" bg-white py-4 px-6 h-[150px] w-[700px] border-b-2 border-slate-100 ">
       <div className="flex bg-white h-[90px] w-[650px]">
         <div className="flex items-center justify-center">
+
+
           <Image
             className=""
             src={image}
