@@ -1,15 +1,12 @@
 "use client";
 import CartProduct from "@/components/CartProduct";
 import Header from "@/components/Header";
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-
-
-
-const page = () => {
+const Page = () => {
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -72,4 +69,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
