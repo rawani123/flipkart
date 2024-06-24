@@ -1,11 +1,10 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0); // State to track current slide index
 
-  // Array of images to be displayed in the carousel
   const slides = [
     { src: "/img1.jpeg", height: 1000, width: 1700, alt: "Image 1" },
     { src: "/img2.jpeg", height: 1000, width: 1700, alt: "Image 2" },
@@ -16,6 +15,18 @@ const Slider = () => {
     // Add more images as needed
   ];
 
+  // Function to move to the next slide
+  const moveToNextSlide = useCallback(() => {
+    const nextSlide = (currentSlide + 1) % slides.length;
+    setCurrentSlide(nextSlide);
+  }, [currentSlide, slides.length]);
+
+  // Function to move to the previous slide
+  const moveToPrevSlide = () => {
+    const prevSlide = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
+    setCurrentSlide(prevSlide);
+  };
+
   useEffect(() => {
     // Function to automatically move to the next slide every 5 seconds
     const interval = setInterval(() => {
@@ -23,19 +34,7 @@ const Slider = () => {
     }, 5000); // Adjust the interval as needed (in milliseconds)
 
     return () => clearInterval(interval); // Clean up the interval on component unmount
-  }, [currentSlide]);
-
-  // Function to move to the next slide
-  const moveToNextSlide = () => {
-    const nextSlide = (currentSlide + 1) % slides.length;
-    setCurrentSlide(nextSlide);
-  };
-
-  // Function to move to the previous slide
-  const moveToPrevSlide = () => {
-    const prevSlide = currentSlide === 0 ? slides.length - 1 : currentSlide - 1;
-    setCurrentSlide(prevSlide);
-  };
+  }, [moveToNextSlide]);
 
   return (
     <div className="px-8 bg-slate-100">
