@@ -15,7 +15,7 @@ export default function Home() {
     if (!product) return;
     //reload the page
 
-    window.location.reload();
+    // window.location.reload();
     try {
       const response = await axios.post('/api/product', product, {
         headers: {
